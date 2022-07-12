@@ -1,0 +1,25 @@
+.palette {
+	display: flex;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	background-color: #f2f2f2;
+	justify-content: center;
+}
+
+.palette_item {
+	cursor: pointer;
+	opacity: 0.6;
+}
+
+.palette_item:hover {
+	opacity: 0.85;
+}
+
+.palette_item:focus {
+	opacity: 1;
+}
+
+.palette_item.active,
+.palette_item:active {
+	opacity: 1;
+}
