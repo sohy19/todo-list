@@ -10,7 +10,7 @@ function TodoItemList({ todos, onToggle, onRemove }) {
 			onToggle={onToggle}
 			onRemove={onRemove}
 			key={id}
-			color={nowColor}
+			nowColor={nowColor}
 		/>
 	));
 	return <div>{todoList}</div>;
