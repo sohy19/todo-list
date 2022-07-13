@@ -13,7 +13,7 @@ const App = () => {
 		{ id: 2, text: "라이프 사이클 이해하기", checked: false },
 	]);
 
-	const [colorInfo, setColorInfo] = useState("#343a40");
+	const [nowColor, setNowColor] = useState("#343a40");
 
 	const colorList = ["#343a40", "#f03e3e", "#12b886", "#228ae6"];
 
@@ -24,7 +24,7 @@ const App = () => {
 			id: id,
 			text: input,
 			checked: false,
-			color: colorInfo,
+			nowColor: nowColor,
 		});
 		setId(id + 1);
 		setTodos(todo);
@@ -53,8 +53,8 @@ const App = () => {
 		setTodos(nextTodos);
 	};
 
-	const handleClick = (color) => {
-		setColorInfo(color);
+	const handleClick = (nowColor) => {
+		setNowColor(nowColor);
 	};
 
 	return (
@@ -66,10 +66,16 @@ const App = () => {
 						onChange={handleChange}
 						onKeyPress={handelKeyPress}
 						onCreate={handleCreate}
-						color={colorInfo}
+						nowColor={nowColor}
 					/>
 				}
-				palette={<Palette colorList={colorList} onClick={handleClick} />}
+				palette={
+					<Palette
+						colorList={colorList}
+						onClick={handleClick}
+						nowColor={nowColor}
+					/>
+				}
 			>
 				<TodoItemList
 					todos={todos}

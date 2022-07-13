@@ -1,6 +1,7 @@
 import React from "react";
 
-const Palette = ({ colorList, onClick }) => {
+const Palette = ({ colorList, onClick, nowColor }) => {
+	console.log(nowColor);
 	const colors = colorList.map((color, indx) => (
 		<div
 			className="palette_item"
@@ -11,6 +12,7 @@ const Palette = ({ colorList, onClick }) => {
 				height: "33px",
 				float: "left",
 				margin: "10px",
+				opacity: nowColor === color && 1,
 			}}
 			onClick={() => {
 				onClick(color);

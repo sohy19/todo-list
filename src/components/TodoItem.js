@@ -1,7 +1,7 @@
 import React from "react";
 import "./TodoItem.css";
 
-function TodoItem({ text, checked, id, onToggle, onRemove, color }) {
+function TodoItem({ text, checked, id, onToggle, onRemove, nowColor }) {
 	return (
 		<>
 			<div className="todo-item" onClick={() => onToggle(id)}>
@@ -15,7 +15,7 @@ function TodoItem({ text, checked, id, onToggle, onRemove, color }) {
 					&times;
 				</div>
 				<div className={`todo-text ${checked ? "checked" : ""}`}>
-					<div style={{ color: color }}>{text}</div>
+					<div style={{ color: nowColor }}>{text}</div>
 				</div>
 				{checked && <div className="check-mark">&#x2713;</div>}
 			</div>
